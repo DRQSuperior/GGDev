@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9565315-1F74-4688-A2CE-0B0192D647E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StormFN Launcher</RootNamespace>
+    <AssemblyName>StormFN Launcher</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management.Automation" />
+    <Reference Include="System.Text.Json" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ModernWpf" />
+    <Reference Include="ModernWpf.Controls" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StormFN Launcher_ProcessedByFody.cs" />
+    <Compile Include="StormFN_Launcher\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StormFN_Launcher\Config_file.cs" />
+    <Compile Include="StormFN_Launcher\Config_file.Designer.cs">
+      <DependentUpon>Config_file.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StormFN_Launcher\Epic\Auth.cs" />
+    <Compile Include="StormFN_Launcher\Epic\devicecode.cs" />
+    <Compile Include="StormFN_Launcher\Epic\Exchange.cs" />
+    <Compile Include="StormFN_Launcher\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StormFN_Launcher\Properties\Resources.cs" />
+    <Compile Include="StormFN_Launcher\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StormFN_Launcher\Utilities\Injector.cs" />
+    <Compile Include="StormFN_Launcher\Utilities\Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\pdb.compressed" />
+    <EmbeddedResource Include="Costura\cs\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\de\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\es\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\fa\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\fr\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\it\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\ja\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\ko\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\metadata" />
+    <EmbeddedResource Include="Costura\microsoft\bcl\asyncinterfaces\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\shell\dll.compressed" />
+    <EmbeddedResource Include="Costura\modernwpf\controls\dll.compressed" />
+    <EmbeddedResource Include="Costura\modernwpf\dll.compressed" />
+    <EmbeddedResource Include="Costura\newtonsoft\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\pl\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\pt-br\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\restsharp\dll.compressed" />
+    <EmbeddedResource Include="Costura\ru\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\buffers\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\diagnosticsource\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\management\automation\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\memory\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\numerics\vectors\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\compilerservices\unsafe\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\text\encodings\web\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\text\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\tasks\extensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\valuetuple\dll.compressed" />
+    <EmbeddedResource Include="Costura\tr\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\zh-hans\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\zh-hant\modernwpf\resources\dll.compressed" />
+    <EmbeddedResource Include="StormFN_Launcher\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="StormFN_Launcher\Config_file.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Config_file.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StormFN_Launcher\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="StormFN_Launcher\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="StormFN_Launcher\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="burbankbigcondensed-black.otf" />
+    <Resource Include="discordlogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
